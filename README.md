@@ -19,16 +19,10 @@ Ensure you have ROS2 Humble installed. If not, follow the [official installation
 ```bash
 # Create workspace directory
 mkdir -p ~/turtlebot3-ros2humble-simulations/src
-cd ~/turtlebot3-ros2humble-simulations/src
+cd ~/turtlebot3-ros2humble-simulations/
 
 # Clone this repository
 git clone https://github.com/prakash-aryan/turtlebot3-ros2humble-simulations.git .
-
-# Clone required repositories
-git clone -b humble-devel https://github.com/ROBOTIS-GIT/turtlebot3.git
-git clone -b humble-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
-git clone -b ros2-devel https://github.com/ROBOTIS-GIT/DynamixelSDK.git
-git clone -b ros2-devel https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
 ```
 
 ### 3. Install Dependencies
