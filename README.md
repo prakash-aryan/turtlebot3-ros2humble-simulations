@@ -17,12 +17,11 @@ Ensure you have ROS2 Humble installed. If not, follow the [official installation
 ### 2. Create Workspace and Clone Repository
 
 ```bash
-# Create workspace directory
-mkdir -p ~/turtlebot3-ros2humble-simulations/src
-cd ~/turtlebot3-ros2humble-simulations/
-
 # Clone this repository
-git clone https://github.com/prakash-aryan/turtlebot3-ros2humble-simulations.git .
+git clone https://github.com/prakash-aryan/turtlebot3-ros2humble-simulations.git
+
+# Create workspace directory
+cd ~/turtlebot3-ros2humble-simulations/
 ```
 
 ### 3. Install Dependencies
