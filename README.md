@@ -18,12 +18,18 @@ Ensure you have ROS2 Humble installed. If not, follow the [official installation
 
 ```bash
 # Create workspace directory
-mkdir -p ~/turtlebot3_ws/src
-cd ~/turtlebot3_ws/src
+mkdir -p ~/turtlebot3-ros2humble-simulations/src
+cd ~/turtlebot3-ros2humble-simulations/src
 
 # Clone this repository
 git clone https://github.com/prakash-aryan/turtlebot3-ros2humble-simulations.git .
 
+# Clone required repositories
+git clone -b humble-devel https://github.com/ROBOTIS-GIT/turtlebot3.git
+git clone -b humble-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
+git clone -b ros2-devel https://github.com/ROBOTIS-GIT/DynamixelSDK.git
+git clone -b ros2-devel https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
+```
 
 ### 3. Install Dependencies
 
@@ -58,7 +64,7 @@ rosdep install --from-paths src --ignore-src -r -y
 ### 4. Build the Workspace
 
 ```bash
-cd ~/turtlebot3_ws
+cd ~/turtlebot3-ros2humble-simulations
 colcon build --symlink-install
 ```
 
@@ -68,7 +74,7 @@ colcon build --symlink-install
 Before running any commands, source your workspace in each new terminal:
 
 ```bash
-source ~/turtlebot3_ws/install/setup.bash
+source ~/turtlebot3-ros2humble-simulations/install/setup.bash
 ```
 
 ### 2. Set Environment Variables
@@ -103,7 +109,7 @@ ros2 launch custom_launch custom_turtlebot3.launch.py
 #### Teleoperation
 In a new terminal:
 ```bash
-source ~/turtlebot3_ws/install/setup.bash
+source ~/turtlebot3-ros2humble-simulations/install/setup.bash
 ros2 run turtlebot3_teleop teleop_keyboard
 ```
 
@@ -119,7 +125,7 @@ Control keys:
 
 ### 1. Launch Simulation with Appropriate World
 ```bash
-source ~/turtlebot3_ws/install/setup.bash
+source ~/turtlebot3-ros2humble-simulations/install/setup.bash
 export TURTLEBOT3_MODEL=burger
 export WORLD_NAME=turtlebot3_world  # Better for SLAM
 ros2 launch custom_launch custom_turtlebot3.launch.py
@@ -128,7 +134,7 @@ ros2 launch custom_launch custom_turtlebot3.launch.py
 ### 2. Launch Cartographer SLAM
 In a new terminal:
 ```bash
-source ~/turtlebot3_ws/install/setup.bash
+source ~/turtlebot3-ros2humble-simulations/install/setup.bash
 export TURTLEBOT3_MODEL=burger
 ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=True
 ```
@@ -136,7 +142,7 @@ ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=True
 ### 3. Control Robot for Mapping
 In another terminal:
 ```bash
-source ~/turtlebot3_ws/install/setup.bash
+source ~/turtlebot3-ros2humble-simulations/install/setup.bash
 export TURTLEBOT3_MODEL=burger
 ros2 run turtlebot3_teleop teleop_keyboard
 ```
@@ -172,13 +178,13 @@ After creating a map, you can use it for navigation:
 
 ```bash
 # Terminal 1: Launch Simulation
-source ~/turtlebot3_ws/install/setup.bash
+source ~/turtlebot3-ros2humble-simulations/install/setup.bash
 export TURTLEBOT3_MODEL=burger
 export WORLD_NAME=turtlebot3_world
 ros2 launch custom_launch custom_turtlebot3.launch.py
 
 # Terminal 2: Launch Navigation
-source ~/turtlebot3_ws/install/setup.bash
+source ~/turtlebot3-ros2humble-simulations/install/setup.bash
 export TURTLEBOT3_MODEL=burger
 ros2 launch nav2_bringup navigation_launch.py map:=/path/to/your/map.yaml
 ```
@@ -225,7 +231,7 @@ ros2 launch custom_launch custom_turtlebot3.launch.py x_pose:=0.0 y_pose:=0.0
 
 ## Directory Structure
 ```
-turtlebot3_ws/
+turtlebot3-ros2humble-simulations/
 ├── src/
 │   ├── custom_launch/
 │   ├── DynamixelSDK/
