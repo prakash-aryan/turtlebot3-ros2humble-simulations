@@ -22,14 +22,8 @@ mkdir -p ~/turtlebot3_ws/src
 cd ~/turtlebot3_ws/src
 
 # Clone this repository
-git clone <your-repository-url> .
+git clone https://github.com/prakash-aryan/turtlebot3-ros2humble-simulations.git .
 
-# Clone required repositories
-git clone -b humble-devel https://github.com/ROBOTIS-GIT/turtlebot3.git
-git clone -b humble-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
-git clone -b ros2-devel https://github.com/ROBOTIS-GIT/DynamixelSDK.git
-git clone -b ros2-devel https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
-```
 
 ### 3. Install Dependencies
 
