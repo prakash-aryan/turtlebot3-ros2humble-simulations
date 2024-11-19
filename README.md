@@ -42,6 +42,12 @@ sudo apt install -y \
     ros-humble-ament-cmake \
     ros-humble-urdf \
     ros-humble-rclpy \
+    ros-humble-turtlebot3 \
+    ros-humble-turtlebot3-gazebo \
+    ros-humble-turtlebot3-simulations \
+    ros-humble-gazebo-plugins \
+    ros-humble-gazebo-ros \
+    ros-humble-gazebo-dev \
     ros-humble-gazebo-ros2-control \
     python3-colcon-common-extensions \
     ros-humble-xacro \
