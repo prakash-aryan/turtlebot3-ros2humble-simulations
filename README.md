@@ -49,7 +49,6 @@ sudo apt install -y \
     ros-humble-robot-state-publisher
 
 # Initialize rosdep
-sudo rosdep init
 rosdep update
 rosdep install --from-paths src --ignore-src -r -y
 ```
